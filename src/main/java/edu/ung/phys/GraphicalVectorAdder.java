@@ -79,8 +79,13 @@ public class GraphicalVectorAdder extends PApplet {
     
     line(pxxi, pxyi, pxxf, pxyf);
 
-    fill(0, 0, 255);
-    ellipse(pxxf, pxyf, 20, 20);
+    pushMatrix();
+    translate(pxxf, pxyf);
+    double theta = Math.atan2(yf - yi, xf - xi);
+    rotate((float) -theta);
+    line(0, 0, -15, 8);
+    line(0, 0, -15, -8);
+    popMatrix();
   }
 
 	
